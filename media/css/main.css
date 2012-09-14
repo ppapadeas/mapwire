@@ -1,0 +1,63 @@
+/*
+variables
+*/
+
+@font-face { font-family: Xolonium; src: url('/media/fonts/Xolonium-Regular.otf');}
+@font-face { font-family: Xolonium; font-weight: bold; src: url('/media/fonts/Xolonium-Bold.otf');}
+
+@red: #ce0000;
+@lightgray: #F0F0F0;
+@medgray: #ccc;
+@darkgray: #666;
+
+/*
+mixins
+*/
+
+.border-radius (@radius: 5px, @color: white) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    border:1px solid @color;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family:Xolonium;
+    color:#000000;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+html, body, #map {
+    height: 100%;
+}
+
+#container {
+    position:absolute;
+    right:12px;
+    top:12px;
+    z-index:3;
+    background-color:white;
+    color:black;
+    padding:10px;
+    -moz-box-shadow: 0 0 5px 5px #ccc;
+    -webkit-box-shadow: 0 0 5px 5px #ccc;
+    box-shadow: 0 0 5px 5px #ccc;
+    .border-radius;
+}
+
+#title {
+    font-size:2.2em;
+    font-weight:bold;
+}
+
+#wire {
+    color:@red;
+}
+
+#loading {
+    display:none;
+    margin-left:10px;
+}
