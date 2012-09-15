@@ -59,5 +59,17 @@ html, body, #map {
 
 #loading {
     display:none;
-    margin-left:10px;
+    vertical-align:40%;
+    padding:3px 3px 7px 7px;
+    font-weight:bold;
+    color:@red;
+    background-color:rgba(255, 255, 255, 0.7);
+    -moz-box-shadow: 0 0 5px 5px #ccc;
+    -webkit-box-shadow: 0 0 5px 5px #ccc;
+    box-shadow: 0 0 5px 5px #ccc;
+    .border-radius;
+    position:absolute;
+    bottom:-5px;
+    left:-5px;
+    z-index:4;
 }
