@@ -9,4 +9,5 @@ from django.core.mail import send_mail
 
 
 def home(request):
+    OSM_KEY = settings.OSM_KEY
     return render_to_response('base.html', locals())
