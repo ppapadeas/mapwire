@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="shortcut icon" href="/media/favicon.ico" /> 
-    <!--<link rel="stylesheet" href="/media/css/foundation.css">-->
+    <link rel="stylesheet" href="/media/css/foundation.css">
     <link rel="stylesheet/less" href="/media/css/main.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
     <script type="text/javascript" src="http://code.medialibre.net/less.js" ></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <!--<script type="text/javascript" src="/media/js/foundation.js"></script>
-    <script type="text/javascript" src="/media/js/modernizr.foundation.js"></script>-->
+    <script type="text/javascript" src="/media/js/foundation.min.js"></script>
+    <script type="text/javascript" src="/media/js/modernizr.foundation.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
     <script type="text/javascript" src="/media/js/main.js"></script>
 </head>
@@ -21,19 +21,34 @@
 	<div id="map"></div>
 
 
-<div id="container">
-    <div id="title">map<span id="wire">wire</span>
-        <!--<span id="loading"><img src="/media/images/loader.gif" alt="loading..." /></span>-->
-        <img src="/media/images/myloc.svg" alt="my location" width="14" height="14" />
-        <img src="/media/images/share.svg" alt="share" width="14" height="14" />
-        <a href="#" id="maximize"><img src="/media/images/maximize.svg" alt="maximize" width="14" height="14" /></a>
+<main class="row hide-on-phones">
+    <div class="twelve columns">
+        <div class="row">
+            <div class="six columns" id="title">map<span id="wire">wire</span></div>
+            <div class="two columns fnkey icon">
+                <a href="">,</a>
+            </div>
+            <div class="two columns fnkey icon inactive">
+                o
+            </div>
+            <div class="two columns fnkey icon inactive">
+                v
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="twelve columns">
+            <form>
+                <div class="ten columns">
+                    <input type="text" name="search" autofocus="autofocus" />
+                </div>
+                <div class="two columns">
+                    <a href="#" class="postfix button expand icon" id="search">s</a>
+                </div>
+            </form>
+            </div>
+        </div>
     </div>
-    <div>
-        <form>
-            <input type="text" name="search" autofocus="autofocus" />
-        </form>
-    </div>
-</div>
+</main>
 
 
 <script type="text/javascript" src="/media/js/map.js"></script>
