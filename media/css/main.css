@@ -4,6 +4,11 @@ variables
 
 @font-face { font-family: Xolonium; src: url('/media/fonts/Xolonium-Regular.otf');}
 @font-face { font-family: Xolonium; font-weight: bold; src: url('/media/fonts/Xolonium-Bold.otf');}
+@font-face { font-family: OpenSans; src: url('/media/fonts/OpenSans-Regular.ttf');}
+@font-face { font-family: OpenSans; font-weight: bold; src: url('/media/fonts/OpenSans-Bold.ttf');}
+@font-face { font-family: OpenSans; font-style: italic; src: url('/media/fonts/OpenSans-Italic.ttf');}
+@font-face { font-family: OpenSans; font-weight: bold; font-style: italic; src: url('/media/fonts/OpenSans_BoldItalic.ttf');}
+@font-face { font-family: Modernpics; src: url('/media/fonts/modernpics.otf');}
 
 @red: #ce0000;
 @lightgray: #F0F0F0;
@@ -24,24 +29,23 @@ mixins
 body {
     padding: 0;
     margin: 0;
-    font-family:Xolonium;
     color:#000000;
     font-size: 12px;
     line-height: 1.4;
+    font-family:OpenSans;
 }
 
 html, body, #map {
     height: 100%;
 }
 
-#container {
+main {
     position:absolute;
     right:12px;
     top:12px;
     z-index:3;
     background-color:rgba(255, 255, 255, 0.6);
     color:black;
-    padding:10px;
     -moz-box-shadow: 0 0 5px 5px #ccc;
     -webkit-box-shadow: 0 0 5px 5px #ccc;
     box-shadow: 0 0 5px 5px #ccc;
@@ -51,6 +55,7 @@ html, body, #map {
 #title {
     font-size:2.2em;
     font-weight:bold;
+    font-family:Xolonium;
 }
 
 #wire {
@@ -72,4 +77,30 @@ html, body, #map {
     bottom:-5px;
     left:-5px;
     z-index:4;
+    font-family:Xolonium;
+}
+
+.inactive {
+    opacity:0.4;
+}
+
+.icon {
+    font-family:Modernpics;
+    font-size:2em;
+}
+
+.fnkey {
+    padding-top:5px;
+}
+
+.fnkey a {
+    color:black;
+}
+
+.fnkey a:hover {
+    color:@red;
+}
+
+#search {
+    padding:3px;
 }
