@@ -104,3 +104,21 @@ main {
 #search {
     padding:3px;
 }
+
+#beta {
+    position:absolute;
+    left:-45px;
+    bottom:10px;
+    color:@red;
+    -webkit-transform: rotate(45deg); 
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    background-color:white;
+    width:140px;
+    text-align:center;
+    padding:5px;
+    font-size:1.2em;
+    opacity:0.6;
+    
+}
