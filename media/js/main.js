@@ -1,19 +1,29 @@
-$(document).ready(function() {
+//$(document).ready(function() {
     //$('#loading').hide();
-});
+//});
 
 $(document).ajaxStart(function() {
-    //$('#loading').toggle();
-    alert('yoohoo');
+    $("#loading").toggle();
 }).ajaxStop( function() {
-    $('#loading').toggle();
+    $("#loading").toggle();
 });
 
 
 $(document).ready(function() {
-    $('#loading').toggle();
+    $("#loading").toggle();
 	
     $("a#myloc").click(function() {
         myloc();
+    });
+    
+    $("input#query").keypress(function(e) {
+        if (e.which == 13) {
+            $("a#searchbutton").click();
+        }
+    });
+    
+    $("a#searchbutton").click(function() {
+        var query = $("input#query").val();
+        $("#searchresults").load("/search/"+query+"/");
     });
 });

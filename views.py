@@ -6,8 +6,17 @@ from datetime import date
 from django.contrib.auth import authenticate, login
 from django.conf import settings
 from django.core.mail import send_mail
+from mapwire import functions
+
+
+OSM_KEY = settings.OSM_KEY
 
 
 def home(request):
-    OSM_KEY = settings.OSM_KEY
     return render_to_response('base.html', locals())
+
+    
+def search(request, query):
+    places = functions.get_results(query)
+    #p.displayname = places.displayname
+    return render_to_response('search.html', locals())
