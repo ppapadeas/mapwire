@@ -18,13 +18,18 @@ $(document).ready(function() {
 
     $("input#query").keypress(function(e) {
         if (e.which == 13) {
-            $("a#searchbutton").click();
+            $("a#search_button").click();
         }
     });
 
-    $("a#searchbutton").click(function() {
+    $("a#search_button").click(function() {
         var query = $("input#query").val();
-        $("#searchresults").load("/search/"+query+"/");
+        $("#search_results").load("/search/"+query+"/");
+    });
+
+    $("a#search_point").click(function(e) {
+        var query = e.attr("value");
+        point(query);
     });
 
     $("a#meta_button").click(function() {
