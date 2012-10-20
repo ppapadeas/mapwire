@@ -1,3 +1,3 @@
 {% for place in places %}
-    {{ places[0]['display_name'] }}
+    <a href="#" id="search_point" value="{{ place.lat }}, {{ place.lon }}">{{ place.display_name }}</a><br /><br />
 {% endfor %}
