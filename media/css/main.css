@@ -51,6 +51,8 @@ main {
     -webkit-box-shadow: 0 0 5px 5px #ccc;
     box-shadow: 0 0 5px 5px #ccc;
     .border-radius;
+    max-height:87%;
+    overflow:auto;
 }
 
 #title {
@@ -102,8 +104,12 @@ main {
     color:@red;
 }
 
-#searchbutton {
+#search_button {
     padding:3px;
+}
+
+#search_results {
+    overflow:auto;
 }
 
 #beta {
