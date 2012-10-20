@@ -17,3 +17,7 @@ function myloc () {
 
     map.locate({setView: true, maxZoom: 16});
 }
+
+function point (latlon) {
+    map.setView(new L.LatLng(latlon), 15);
+}
