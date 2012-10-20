@@ -4,7 +4,7 @@
     <title>mapwire</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="shortcut icon" href="/media/favicon.ico" /> 
+    <link rel="shortcut icon" href="/media/favicon.ico" />
     <link rel="stylesheet" href="/media/css/foundation.css">
     <link rel="stylesheet/less" href="/media/css/main.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
@@ -17,12 +17,13 @@
 </head>
 <body>
     <div id="loading">loading...</div>
-    
+
 	<div id="map"></div>
 
 
-<main class="row hide-on-phones">
-    <div class="twelve columns">
+<main class="row">
+<!-- big  & medium screens -->
+    <div class="twelve columns hide-for-small">
         <div class="row">
             <div class="six columns" id="title">map<span id="wire">wire</span></div>
             <div class="two columns fnkey icon">
@@ -49,7 +50,40 @@
         </div>
         <div class="row">
             <div class="twelve columns" id="searchresults">
-                
+
+            </div>
+        </div>
+    </div>
+
+<!-- small screens -->
+    <div class="twelve columns show-for-small">
+        <div class="row">
+            <div class="six columns" id="title">map<span id="wire">wire</span></div>
+            <div class="two columns fnkey icon">
+                <a href="#" id="myloc">,</a>
+            </div>
+            <div class="two columns fnkey icon inactive">
+                o
+            </div>
+            <div class="two columns fnkey icon inactive">
+                v
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="twelve columns">
+
+                <div class="ten columns">
+                    <input type="text" name="query" id="query" autofocus="autofocus" />
+                </div>
+                <div class="two columns">
+                    <a href="#" class="postfix button expand icon" id="searchbutton">s</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns" id="searchresults">
+
             </div>
         </div>
     </div>
