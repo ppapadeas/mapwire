@@ -111,7 +111,7 @@ main {
     left:-45px;
     bottom:10px;
     color:@red;
-    -webkit-transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -121,5 +121,11 @@ main {
     padding:5px;
     font-size:1.2em;
     opacity:0.6;
-    
+
+}
+
+#meta {
+    position:absolute;
+    bottom:20px;
+    right:12px;
 }
