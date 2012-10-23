@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login
 from django.conf import settings
 from django.core.mail import send_mail
 from mapwire import functions
+from django.utils.encoding import smart_str
 
 
 def home(request):
@@ -15,6 +16,6 @@ def home(request):
 
 
 def search(request, query):
-    places = functions.get_results(query)
+    places = functions.get_results(smart_str(query))
     #p.displayname = places.displayname
     return render_to_response('search.html', locals())
