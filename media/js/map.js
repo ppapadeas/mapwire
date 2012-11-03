@@ -21,3 +21,8 @@ function myloc () {
 function point (latlon) {
     map.setView(new L.LatLng(latlon), 15);
 }
+
+function maprightclick(e) {
+    var popuptext = "<b>" + e.latlng.lat.toFixed(4) + "&nbsp;&nbsp;" + e.latlng.lng.toFixed(4) + "</b>&nbsp;&nbsp;<a href=\"/p/" + e.latlng.lat + "/" + e.latlng.lng + "\" class=\"icon\">o</a>";
+    L.marker(e.latlng).addTo(map).bindPopup(popuptext).openPopup();
+}
