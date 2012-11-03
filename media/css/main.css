@@ -40,6 +40,10 @@ html, body, #map {
     overflow: hidden;
 }
 
+a {
+    color:@red;
+}
+
 main {
     position:absolute;
     right:12px;
