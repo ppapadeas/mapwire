@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^$', 'mapwire.views.home', name='home'),
     #url(r'search/(?P<query>[a-z0-9-.]+)/$', 'mapwire.views.search', name='search'),
     url('^search/(?P<query>.*)$', 'mapwire.views.search', name='search'),
+    url(r'^p/(?P<lat>\d{2}\.\d*)/(?P<lon>\d{2}\.\d*)/$', 'mapwire.views.point', name='point'),
 
     #admin
     #url(r'^admin/', include(admin.site.urls)),
