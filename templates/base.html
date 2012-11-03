@@ -106,10 +106,18 @@
     var osmAttrib='Map data © OpenStreetMap contributors';
     var osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 18, attribution: osmAttrib});
 
-    map.setView(new L.LatLng(29, 22.5), 2);
+    {%if lat and lon %}
+        var loc = new L.LatLng({{ lat }}, {{ lon }});
+        map.setView(loc, 16);
+        L.marker(loc).addTo(map);
+    {% else %}
+        map.setView(new L.LatLng(29, 22.5), 2);
+    {% endif %}
     map.addLayer(osm);
 </script>
 <script type="text/javascript" src="/media/js/map.js"></script>
+<script type="text/javascript">
+    map.on('contextmenu', maprightclick);
+</script>
 </body>
 </html>
-
