@@ -19,3 +19,8 @@ def search(request, query):
     places = functions.get_results(smart_str(query))
     #p.displayname = places.displayname
     return render_to_response('search.html', locals())
+
+
+def point(request, lat, lon):
+    OSM_KEY = settings.OSM_KEY
+    return render_to_response('base.html', locals())
