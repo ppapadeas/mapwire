@@ -40,7 +40,7 @@ html, body, #map {
     overflow: hidden;
 }
 
-a {
+.icon a {
     color:@red;
 }
 
