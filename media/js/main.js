@@ -16,6 +16,10 @@ $(document).ready(function() {
         myloc();
     });
 
+    $("a#full").click(function() {
+        togglefull();
+    });
+
     $("input#query").keypress(function(e) {
         if (e.which == 13) {
             $("a#search_button").click();

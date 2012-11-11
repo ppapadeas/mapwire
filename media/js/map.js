@@ -18,6 +18,19 @@ function myloc () {
     map.locate({setView: true, maxZoom: 16});
 }
 
-function point (latlon) {
+function togglefull() {
+    var docElem=document.documentElement;
+    if (docElem.requestFullScreen) {
+        docElem.requestFullScreen();
+    }
+    else if (docElem.mozRequestFullScreen) {
+        docElem.mozRequestFullScreen();
+    }
+    else if (docElem.webkitRequestFullScreen) {
+        docElem.webkitRequestFullScreen();
+    }
+}
+
+function point(latlon) {
     map.setView(new L.LatLng(latlon), 15);
 }
