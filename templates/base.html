@@ -112,7 +112,8 @@
     {%if lat and lon %}
         var loc = new L.LatLng({{ lat }}, {{ lon }});
         map.setView(loc, 16);
-        //L.marker(loc).addTo(map);
+        var pname = "{{ pname }}";
+        var pnamedetails = "{{ pnamedetails }}";
         sharedpointer(loc);
     {% else %}
         map.setView(new L.LatLng(29, 22.5), 2);
