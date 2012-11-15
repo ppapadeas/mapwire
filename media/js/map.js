@@ -33,6 +33,15 @@ function maprightclick(e) {
     markers.push(marker);
 }
 
+function sharedpointer(e) {
+    var ndx = markers.length;
+    var popuptext = "<b>" + e.lat.toFixed(4) + "&nbsp;&nbsp;" + e.lng.toFixed(4) +
+        "</b>&nbsp;&nbsp;<a href=\"/p/" + e.lat + "/" + e.lng + "\" class=\"icon\">o</a>&nbsp;&nbsp;" +
+        "<a href=\"javascript:deletemarker(" + ndx + ")\" class=\"icon\">X</a>";
+    var marker = L.marker(e).addTo(map).bindPopup(popuptext);
+    markers.push(marker);
+}
+
 function deletemarker(ndx) {
     map.removeLayer(markers[ndx]);
 }
