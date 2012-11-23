@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     #url(r'^admin/', include(admin.site.urls)),
 
     (r'^robots\.txt$', direct_to_template, {'template': 'robots.txt', 'mimetype': 'text/plain'}),
+    (r'^manifest\.webapp$', direct_to_template, {'template': 'manifest.webapp', 'mimetype': 'text/plain'}),
 )
 
 
