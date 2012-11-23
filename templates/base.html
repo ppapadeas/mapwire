@@ -16,9 +16,19 @@
     <script type="text/javascript" src="/media/js/main.js"></script>
 </head>
 <body>
-    <div id="loading">loading...</div>
 
-    <div id="map"></div>
+<div id="loading">loading...</div>
+
+<div id="map"></div>
+
+
+<div id="sharemodal" class="reveal-modal expand">
+    <h2>share...</h2>
+    <p class="lead" id="shareurl"></p>
+    <p>copy the url above</p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+
 
 
 <main class="row">
@@ -30,7 +40,7 @@
                 <a href="#" id="myloc">,</a>
             </div>
             <div class="two columns fnkey icon inactive">
-                o
+                <a href="#" data-reveal-id="sharemodal">o</a>
             </div>
             <div class="two columns fnkey icon inactive">
                 v

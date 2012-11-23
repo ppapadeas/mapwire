@@ -16,6 +16,11 @@ $(document).ready(function() {
         myloc();
     });
 
+    $("#buttonforsharemodal").click(function() {
+        $("#forsharemodal").reveal();
+        $("#shareurl").html("<b>test<b>");
+    });
+
     $("input#query").keypress(function(e) {
         if (e.which == 13) {
             $("a#search_button").click();
