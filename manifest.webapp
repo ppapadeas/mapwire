@@ -2,11 +2,11 @@
     "name": "mapwire",
     "description": "A simple map application based on OpenStreetMap",
     "icons": {
-        "16": "/media/img/icon-16.png"
-        "32": "/media/img/icon-32.png"
-        "48": "/media/img/icon-48.png"
-        "64": "/media/img/icon-64.png"
-        "128": "/media/img/icon-128.png"
+        "16": "/media/img/icon-16.png",
+        "32": "/media/img/icon-32.png",
+        "48": "/media/img/icon-48.png",
+        "64": "/media/img/icon-64.png",
+        "128": "/media/img/icon-128.png",
         "256": "/media/img/icon-256.png"
     },
     "developer": {
@@ -17,7 +17,7 @@
         "geolocation": {
             "description": "Required for finding your location on map"
         }
-    }
+    },
     "default_locale": "en",
     "fullscreen": "true",
     "version": "0.1"
