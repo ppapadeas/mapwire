@@ -1,6 +1,7 @@
 {
     "name": "mapwire",
     "description": "A simple map application based on OpenStreetMap",
+    "launch_path": "/",
     "icons": {
         "16": "/media/img/icon-16.png",
         "32": "/media/img/icon-32.png",
