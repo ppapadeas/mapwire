@@ -19,3 +19,7 @@ def search(request, query):
     places = functions.get_results(smart_str(query))
     #p.displayname = places.displayname
     return render_to_response('search.html', locals())
+
+
+def manifest(request):
+    return HttpResponse(content="manifest.webapp", content_type="application/x-web-app-manifest+json")
