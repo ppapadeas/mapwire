@@ -22,4 +22,8 @@ def search(request, query):
 
 
 def manifest(request):
-    return HttpResponse(content="manifest.webapp", content_type="application/x-web-app-manifest+json")
+    import os
+    data = open(os.path.join(settings.MEDIA_ROOT,'manifest.webapp'),'r').read()
+    response = HttpResponse(data, mimetype='application/x-web-app-manifest+json')
+    response['Content-Disposition'] = 'attachment;filename=manifest.webapp'
+    return response
