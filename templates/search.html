@@ -1,3 +1,17 @@
 {% for place in places %}
-    <a href="#" id="search_point" value="{{ place.lat }}, {{ place.lon }}">{{ place.display_name }}</a><br /><br />
+    <div class="search_result" data-lat="{{ place.lat }}" data-lon="{{ place.lon }}">{{ place.display_name }}</div>
 {% endfor %}
+
+<script>
+$(".search_result").click(function() {
+	var query_lat = $(this).attr("data-lat");
+	var query_lon = $(this).attr("data-lon");
+	map.setView(new L.LatLng(query_lat,query_lon),16);
+	var ndx = markers.length;
+	var popuptext = "<b>" + Number(query_lat).toFixed(4) + "&nbsp;&nbsp;" + Number(query_lon).toFixed(4) +
+        "</b>&nbsp;&nbsp;<a href=\"/p/" + query_lat + "/" + query_lon + "\" class=\"icon\">o</a>&nbsp;&nbsp;" +
+        "<a href=\"javascript:deletemarker(" + ndx + ")\" class=\"icon\">I</a>";
+	var marker = L.marker(new L.LatLng(query_lat,query_lon)).addTo(map).bindPopup(popuptext).openPopup();
+	markers.push(marker);
+});
+</script>
