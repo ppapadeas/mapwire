@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="/media/css/foundation.css">
     <link rel="stylesheet/less" href="/media/css/main.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
-    <script type="text/javascript" src="http://code.medialibre.net/less.js" ></script>
-    <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script type="text/javascript" src="/media/js/foundation.min.js"></script>
-    <script type="text/javascript" src="/media/js/modernizr.foundation.js"></script>
-    <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
-    <script type="text/javascript" src="/media/js/main.js"></script>
 </head>
 <body>
 
@@ -31,8 +25,7 @@
 
 
 
-<main class="row">
-<!-- big  & medium screens -->
+<div id="hud" class="row">
     <div class="twelve columns hide-for-small">
         <div class="row">
             <div class="six columns" id="title">map<span id="wire">wire</span></div>
@@ -48,62 +41,35 @@
         </div>
         <div class="row collapse">
             <div class="twelve columns">
-
                 <div class="ten columns">
                     <input type="text" name="query" id="query" autofocus="autofocus" />
                 </div>
                 <div class="two columns">
                     <a href="#" class="postfix button expand icon" id="search_button">s</a>
                 </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="twelve columns" id="search_results">
-
             </div>
         </div>
     </div>
-
-<!-- small screens -->
-    <div class="twelve columns show-for-small">
-        <div class="row">
-            <div class="six columns" id="title">map<span id="wire">wire</span></div>
-            <div class="two columns fnkey icon">
-                <a href="#" id="myloc">,</a>
-            </div>
-            <div class="two columns fnkey icon inactive">
-                o
-            </div>
-            <div class="two columns fnkey icon inactive">
-                v
-            </div>
-        </div>
-        <div class="row collapse">
-            <div class="twelve columns">
-
-                <div class="ten columns">
-                    <input type="text" name="query" id="query" autofocus="autofocus" />
-                </div>
-                <div class="two columns">
-                    <a href="#" class="postfix button expand icon" id="searchbutton">s</a>
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="twelve columns" id="searchresults">
-
-            </div>
+</div>
+<div id="search_hud" class="row">
+    <div class="twelve columns">
+        <div class="search_header">
+            <h6>Search results</h6>
         </div>
     </div>
-</main>
+    <div class="icon" id="search_hud_close">X</div>
+    <div class="twelve columns" id="search_results"></div>
+</div>
+
 
 <div id="beta">beta</div>
 
-<div id="meta" class="icon fnkey">
-    <a href="#" id="meta_button">5</a>
-</div>
+<script type="text/javascript" src="http://code.medialibre.net/less.js" ></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="/media/js/foundation.min.js"></script>
+<script type="text/javascript" src="/media/js/modernizr.foundation.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+<script type="text/javascript" src="/media/js/main.js"></script>
 
 
 <script type="text/javascript">
@@ -116,7 +82,7 @@
 
 <script type="text/javascript">
     var osmUrl='http://{s}.tile.cloudmade.com/{{ OSM_KEY }}/997/256/{z}/{x}/{y}.png';
-    var osmAttrib='Map data © OpenStreetMap contributors';
+    var osmAttrib='Map data © OSM contributors';
     var osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 18, attribution: osmAttrib});
 
     {%if lat and lon %}

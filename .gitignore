@@ -6,3 +6,4 @@ media/admin
 apache
 resources
 templates/piwik.html
+env
