@@ -128,7 +128,7 @@ html, body, #map {
 }
 
 #search_results {
-    overflow:auto;
+    overflow: auto;
     padding: 10px;
 }
 
@@ -165,4 +165,10 @@ html, body, #map {
 
 .search_result {
     cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#search_header {
+    margin-bottom: -10px;
+    margin-left: -5px;
 }
