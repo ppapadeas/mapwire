@@ -14,3 +14,37 @@ def get_results(query):
     #places = soup.findALL('place')
     #places = soup.searchresults.place['display_name']
     return places
+
+
+def get_geocode(lat, lon):
+    import urllib2
+    from BeautifulSoup import BeautifulSoup
+    xml = urllib2.urlopen("http://open.mapquestapi.com/nominatim/v1/reverse?format=xml&lat=%f&lon=%f&accept-language=en" % (lat, lon)).read()
+    soup = BeautifulSoup(xml)
+    geocode = {}
+    try:
+        geocode['country'] = soup.find("country").contents[0]
+    except:
+        geocode['country'] = ""
+
+    try:
+        geocode['city'] = soup.find("city").contents[0]
+    except:
+        geocode['city'] = ""
+
+    try:
+        geocode['suburb'] = soup.find("suburb").contents[0]
+    except:
+        geocode['suburb'] = ""
+
+    try:
+        geocode['road'] = soup.find("road").contents[0]
+    except:
+        geocode['road'] = ""
+
+    try:
+        geocode['house_number'] = soup.find("house_number").contents[0]
+    except:
+        geocode['house_number'] = ""
+
+    return geocode

@@ -27,3 +27,16 @@ def manifest(request):
     response = HttpResponse(data, mimetype='application/x-web-app-manifest+json')
     response['Content-Disposition'] = 'attachment;filename=manifest.webapp'
     return response
+
+
+def point(request, lat, lon):
+    OSM_KEY = settings.OSM_KEY
+    geocode = functions.get_geocode(float(lat), float(lon))
+    pnamedetails = geocode['country']
+    if geocode['city']: pnamedetails = geocode['city'] + ", " + pnamedetails
+    if geocode['suburb']: pnamedetails = geocode['suburb'] + ", " + pnamedetails
+    if geocode['road']:
+        pname = geocode['road'] + " " + geocode['house_number']
+    else:
+        pname = geocode['city']
+    return render_to_response('base.html', locals())
